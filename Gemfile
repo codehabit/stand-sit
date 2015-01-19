@@ -11,21 +11,25 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'unicorn'
 gem 'haml'
+gem 'draper'
 
 group :development do
   gem 'capistrano-rails'
-  gem 'thin'
+  gem 'thin', git: "git://github.com/macournoyer/thin.git"
 end
 
 group :development, :test do
   gem 'quiet_assets'
+  gem 'rspec-instafail'
   gem 'rspec-rails'
+  gem 'rspec'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
 
 group :test do
+  gem 'timecop'
   gem 'capybara'
   gem 'capybara-webkit'
   gem 'database_cleaner', '1.0.0.RC1'
