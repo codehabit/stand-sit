@@ -20,8 +20,6 @@ end
 
 group :development, :test do
   gem 'quiet_assets'
-  gem 'rspec-instafail'
-  gem 'rspec-rails'
   gem 'rspec'
   gem 'byebug'
   gem 'web-console', '~> 2.0'

@@ -2,7 +2,10 @@
   %h3
     Currently #{@current_event.standing? ? "standing" : "sitting"}
   .status
-    You #{@current_event.standing? ? "stood up" : "sat down"} #{distance_of_time_in_words(@current_event.created_at, Time.now)} ago
+    You #{@current_event.standing? ? "stood up" : "sat down"}
+    %span{data: {role: 'status-time-container'}}
+      #{distance_of_time_in_words(@current_event.created_at, Time.now)}
+    ago
     = form_for :event do |f|
       = f.hidden_field :standing, value: !@current_event.standing?
       - button_class = @current_event.standing? ? "standing" : "sitting"
